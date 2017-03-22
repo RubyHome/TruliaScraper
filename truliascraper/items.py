@@ -8,7 +8,7 @@
 import scrapy
 
 
-class TruliaspiderItem(scrapy.Item):
+class TruliascraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass

@@ -1,10 +1,10 @@
 import scrapy, time
 import json
-# from truliaSpider.items import TruliaspiderItem
+# from truliaScraper.items import TruliascraperItem
 
 
 class truliascraperSpider(scrapy.Spider):
-    name = 'truliaSpider'
+    name = 'truliascraper'
     url_template = "https://www.trulia.com/CA/Manhattan_Beach/%s/"
     cnt = 0 
     item = {}
@@ -25,6 +25,7 @@ class truliascraperSpider(scrapy.Spider):
         request1 = scrapy.Request(response.urljoin(nextpage))
         yield request1
     def parse_page(self , response):
+        
         
         URL = response.url
         send_key = str((URL.split("/")[4]).split("-")[0])
@@ -64,6 +65,7 @@ class truliascraperSpider(scrapy.Spider):
         # with open("test.html", 'wb') as f:
         #     f.write(response.body)
        
+
     def manual(self,var_str):
         if var_str is None:
             return ""
